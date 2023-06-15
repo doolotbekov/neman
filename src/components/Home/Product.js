@@ -3,9 +3,28 @@ import {SlBasket} from "react-icons/sl";
 import {IoMdCart} from "react-icons/io";
 import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+// import {CartProductContext} from "../ProductsContext/CartProductContext";
+
 
 
 const Product = (name) => {
+
+    const [amount, setAmount] = useState(1)
+    
+    const addProductToCart = () => {
+        setAmount(amount+1);
+    };
+
+    const minus = () => {
+        setAmount(amount-1);
+    };
+
+    const plus = () => {
+        setAmount(amount+1);
+    };
+    // const {products} = useContext(CartProductContext);
+
+
     // const dispatch = useDispatch();
     //
     // const {
@@ -49,10 +68,10 @@ const Product = (name) => {
 
                </div>
                 <div className="btn flex gap-x-2 justify-center mt-3   h-1/2 py-5">
-                    <button className="text-white p-1 px-5 text-sm rounded-full bg-gray-400 shadow-1 shadow-gray-700 flex justify-between gap-x-3 items-center"><div>-</div>1 <div>+</div></button>
+                    <button className="text-white p-1 px-5 text-sm rounded-full bg-gray-400 shadow-1 shadow-gray-700 flex justify-between gap-x-3 items-center"><button disabled={amount==0?true:false} onClick={() => setAmount(amount-1)}>-</button>{amount}<div  onClick={() => setAmount(amount+1)}>+</div></button>
                     <NavLink
                         to="/basket">
-                    <button className="text-white p-1 px-2 text-sm rounded-full bg-blue-800 hover:bg-blue-600 shadow-1 shadow-blue-950 flex gap-x-2 items-center"><IoMdCart className="text-2xl "/>Купить</button>
+                        <button className="text-white p-1 px-2 text-sm rounded-full bg-blue-800 hover:bg-blue-600 shadow-1 shadow-blue-950 flex gap-x-2 items-center"><IoMdCart className="text-2xl "/>Купить</button>
                     </NavLink>
                 </div>
             </div>
