@@ -1,6 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {data} from '../data'
-import Cart from "../Carts/Cart";
+import Props from "../Props/Props";
 
 
 export const ProductContext = createContext();
@@ -21,7 +21,7 @@ const ProductContextProvider = () => {
             products,
             setProducts
         }}>
-            <Cart/>
+            <Props/>
         </ProductContext.Provider>
     );
 };

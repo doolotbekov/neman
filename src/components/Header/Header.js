@@ -4,6 +4,7 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {BiSearch, BiUserCircle} from "react-icons/bi";
 import {SlBasket} from "react-icons/sl";
 import {NavLink} from "react-router-dom";
+import {IoMdCart} from "react-icons/io";
 
 const Header = () => {
     return (
@@ -27,7 +28,7 @@ const Header = () => {
             <div className="icon flex items-center gap-x-4">
                 <BiUserCircle className="text-3xl"/>
                 <NavLink to={"/basket"}>
-                    <SlBasket className="text-3xl"/>
+                    <IoMdCart className="text-3xl text-black "/>
                 </NavLink>
             </div>
 
