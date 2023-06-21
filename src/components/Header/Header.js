@@ -2,9 +2,9 @@ import React from 'react';
 import logo from "../assets/img/logo.png"
 import {GiHamburgerMenu} from "react-icons/gi";
 import {BiSearch, BiUserCircle} from "react-icons/bi";
-import {SlBasket} from "react-icons/sl";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {IoMdCart} from "react-icons/io";
+
 
 const Header = () => {
     return (
@@ -27,9 +27,9 @@ const Header = () => {
             </div>
             <div className="icon flex items-center gap-x-4">
                 <BiUserCircle className="text-3xl"/>
-                <NavLink to={"/basket"}>
-                    <IoMdCart className="text-3xl text-black "/>
-                </NavLink>
+                <Link to={"/basket"}>
+                    <IoMdCart className="text-3xl text-black"/>
+                </Link>
             </div>
 
         </div>
