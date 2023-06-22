@@ -4,9 +4,11 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {BiSearch, BiUserCircle} from "react-icons/bi";
 import {Link, NavLink} from "react-router-dom";
 import {IoMdCart} from "react-icons/io";
+import {useSelector} from "react-redux";
 
 
 const Header = () => {
+const {cart}= useSelector((s)=>s);
     return (
         <div className="container flex justify-between  items-center py-3">
             <div className="img">

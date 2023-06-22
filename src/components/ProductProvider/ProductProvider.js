@@ -1,25 +1,19 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {ProductContext} from "../ProductsContext/ProductsContext";
 import {Link} from "react-router-dom";
 import Product from "../Products/Product";
 import Basket from "../Basket/Basket";
+import {useDispatch, useSelector} from "react-redux";
 
 
 const ProductProvider = () => {
-    const {products} = useContext(ProductContext);
-    const [cartItem, setCartItem] = useState([]);
+    // const {products} = useContext(ProductContext);
+    const dispatch = useDispatch();
+    const { products } = useSelector((s) => s);
 
+    useEffect(()=>{
 
-    const addToCart = (productId, productName, productPrice) => {
-        console.log(productName);
-        const productToAdd = {
-            product_id: productId,
-            product: productName,
-            price: productPrice,
-
-        };
-        setCartItem([...cartItem, productToAdd]);
-    };
+    })
 
     return (
         <div className=" container ">
@@ -30,15 +24,15 @@ const ProductProvider = () => {
                         return (
                             <div key={index} className="  m-8 w-[20%]  ">
                                 <Link to={'/'} key={index}>
-                                    <Product name={item} key={index} cartItems={cartItem} product={item}
-                                             addToCart={addToCart}/>
+                                    {/*<Product name={item} key={index} cartItems={cartItem} product={item}*/}
+                                    {/*         addToCart={addToCart}/>*/}
                                 </Link>
 
                             </div>
                         )
                     })}
             </div>
-            <Basket cartItems={cartItem}/>
+           {/*<Basket cartItems={cartItem}/>*/}
 
         </div>
     );
